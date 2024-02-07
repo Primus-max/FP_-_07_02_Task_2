@@ -17,25 +17,17 @@ int main()
     cin >> cellSize;
 
     for (int x = 1; x <= chessSize; x++)
-    {   
+    {
         for (int y = 1; y <= chessSize; y++)
-        {   
-            int XY = x + y;
+        {
+            string whiteOrBlack = (x + y) % 2 == 0 
+                ? string(cellSize, symbolWhite)  // Одна из перегрузок метода string, параметрами принимает, что и сколько раз повторить
+                : string(cellSize, symbolBlack);
 
-            if (XY % 2 == 0 )
-            {
-                for (int cell = 0; cell < cellSize; cell++)                
-                    cout << symbolWhite;
-            }
-            else 
-            {
-                for (int cell = 0; cell < cellSize; cell++)                    
-                    cout << symbolBlack;
-            }
-                
-        }     
-
+            cout << whiteOrBlack;
+        }
         cout << endl;
     }
+
 }
 
